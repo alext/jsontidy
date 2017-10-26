@@ -30,6 +30,14 @@ var tests = []struct {
 		Input:    `1234.00`,
 		Expected: "1234.00\n",
 	},
+	{
+		Name:  "Doesn't escape HTML chars",
+		Input: `{"foo": "<bar>"}`,
+		Expected: `{
+  "foo": "<bar>"
+}
+`,
+	},
 }
 
 func TestJSONTidy(t *testing.T) {

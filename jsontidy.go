@@ -12,6 +12,7 @@ func jsontidy(in io.Reader, out io.Writer) error {
 
 	enc := json.NewEncoder(out)
 	enc.SetIndent("", "  ")
+	enc.SetEscapeHTML(false)
 
 	var data interface{}
 	for dec.More() {
