@@ -25,6 +25,11 @@ var tests = []struct {
 		Input:       `this isn't JSON`,
 		ExpectError: true,
 	},
+	{
+		Name:     "Doesn't reformat numbers",
+		Input:    `1234.00`,
+		Expected: "1234.00\n",
+	},
 }
 
 func TestJSONTidy(t *testing.T) {

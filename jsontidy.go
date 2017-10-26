@@ -8,6 +8,7 @@ import (
 func jsontidy(in io.Reader, out io.Writer) error {
 
 	dec := json.NewDecoder(in)
+	dec.UseNumber()
 
 	enc := json.NewEncoder(out)
 	enc.SetIndent("", "  ")
